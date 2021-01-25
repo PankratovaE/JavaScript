@@ -39,13 +39,25 @@ https://mzl.la/2Y79hbZ , как устроен sort можно посмотре�
                 price: 78,
             },
         ];
-        function isImage(product) {
+        //мое решение
+        // function isImage(product) {
             
-           return (Array.isArray(product.photos) && product.photos.length);
+        //    return (Array.isArray(product.photos) && product.photos.length);
            
-        }
-        let items = products.filter(isImage);
+        // }
+        // let items = products.filter(isImage);
+        // console.log(items);
+
+            //решение преподавателя
+        let items = products.filter(isImage => "photos" in isImage && isImage.photos.length >0);
         console.log(items);
+
+        const sortedByPrice = products.sort(function(item1, item2) {
+            return item1.price - item2.price;
+        });
+        console.log(sortedByPrice); 
+
+
     </script>
 </body>
 
