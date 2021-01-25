@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+        // где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+        // переданного значения операции (использовать switch) выполнить одну из арифметических
+        // операций
+        // (использовать функции из задания 4) и вернуть полученное значение.
+        function mathOperation(arg1, arg2, operation) {
+            let result = null;
+            switch (operation) {
+                case "summ":
+                    result = sum(arg1, arg2);
+                    break;
+
+                case 'sub':
+                    result = sub(arg1, arg2);
+                    break;
+
+                case 'mult':
+                    result = mult(arg1, arg2);
+                    break;
+
+                case 'div':
+                    result = div(arg1, arg2);
+                    break;
+            }
+
+            return result;
+        }
+
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        function sub(a, b) {
+            return a - b;
+        }
+
+        function mult(a, b) {
+            return a * b;
+        }
+
+        function div(a, b) {
+            return a / b;
+        }
+
+        alert(`Разность чисел 2 и 3 равна  ${mathOperation(2, 3, 'sub')} `);
+        alert(`Сумма чисел 12 и 3 равна  ${mathOperation(12, 3, 'summ')} `);
+        alert(`Произведение чисел 2 и 33 равно  ${mathOperation(2, 33, 'mult')} `);
+        alert(`Частное чисел 42 и 3 равно  ${mathOperation(42, 3, 'div')} `);
+    </script>
+</body>
+
+</html>
