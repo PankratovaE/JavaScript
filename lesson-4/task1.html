@@ -25,18 +25,18 @@ hundreds: 0, //это сотни
         */
        'use strict';
 
-       let num = null;
+      
         function getNumber() {
-                num = +prompt('Введите число от 0 до 999');
+               let num = +prompt('Введите число от 0 до 999');
             if (num < 0 || num > 999) {
                 console.log('Число должно быть в диапазоне 0 - 999');
-                return num = undefined;
+                return false;
             } else if (!Number.isInteger(num)) {
                 console.log('Число должно быть целым');
-                return num = undefined;
+                return false;
             } else if (Number.isNaN(num)) {
                 console.log('Введите число');
-                return num = undefined;
+                return false;
             } else { 
                 return num;
             }
@@ -45,7 +45,7 @@ hundreds: 0, //это сотни
 
         function ObjectFromNumber (num) {
             
-            if (num !== undefined) {
+            if (num) {
             let hundreds = Math.floor(num / 100);
             let tens = (Math.floor(num / 10)) % 10;
             let units = num % 10;
@@ -56,10 +56,10 @@ hundreds: 0, //это сотни
 
         }
 
-        getNumber();
+        
 
-        let object1 = new ObjectFromNumber(num);
-        console.log(object1);
+        console.log(new ObjectFromNumber(getNumber()));
+
     </script>
 </body>
 </html>
